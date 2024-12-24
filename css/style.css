@@ -1,0 +1,255 @@
+@import url('https://fonts.google.com/specimen/Young+Serif');
+@import url('https://fonts.google.com/specimen/Outfit');
+
+:root{
+    --rose800: hsl(332, 51%, 32%);
+    --rose50: hsl(330, 100%, 98%);
+    --stone900: hsl(24, 5%, 18%);
+    --stone600: hsl(30, 10%, 34%);
+    --stone150: hsl(30, 18%, 87%);
+    --stone100: hsl(30, 54%, 90%);
+    --brown800: hsl(14, 45%, 36%);
+}
+
+body{
+    font-family: 'Outfit', 'arial';
+    background-color: var(--stone100);
+    min-height: 100vh;
+    margin: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.card{
+    background-color: white;
+    width: 736px;
+    height: auto;
+    border-radius: 24px;
+    margin: 68px 352px;
+}
+
+img{
+    border-radius: 12px;
+    margin: 40px 40px 0 40px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.title h1 {
+  font-family: 'Young Serif';
+  font-size: 40px;
+  margin: 40px 40px 24px 40px;
+  color: var(--stone900)
+}
+
+.title p {
+  font-size: 16px;
+  margin: 0 40px 32px 40px;
+  color: var(--stone600)
+  
+}
+
+.preparation {
+  margin: 32px 40px 0 40px;
+  background-color: var(--rose50);
+  width: 656px;
+  height: 172px;
+}
+
+.preparation h3{
+  color: var(--rose800);
+  padding: 24px 24px 0 24px
+}
+
+.preparation ul {
+  list-style: none;
+  padding-left: 0px;
+  color: var(--stone600)
+
+}
+
+.preparation li {
+  margin-bottom: 1rem; /* Esto da un espaciado simple */
+  display: flex;
+  align-items: flex-start;
+  margin-left: 24px;
+  font-size: 16px;
+}
+
+.preparation li::before {
+  content: "•";
+  color: var(--rose800);
+  margin-right: 16px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.ingredients {
+  padding-bottom: 32px; /* Espacio para la línea inferior */
+  position: relative; /* Para posicionar la línea */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.ingredients h2{
+  color: var(--brown800);
+  font-family: 'Young Serif';
+  font-size: 28px;
+  margin-bottom: 24px;
+
+}
+
+.ingredients ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ingredients li {
+  position: relative;
+  padding-left: 32px; /* Espacio para el bullet point */
+  margin-bottom: 12px;
+  color: var(--stone600)
+}
+
+.ingredients li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--brown800)
+}
+
+/* Línea inferior */
+.ingredients::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #E5E5E5; /* Color gris claro para la línea */
+}
+
+.instructions {
+  padding-bottom: 32px; /* Espacio para la línea inferior */
+  position: relative; /* Para posicionar la línea */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+.instructions h2{
+  color: var(--brown800);
+  font-family: 'Young Serif';
+  font-size: 28px;
+  margin-bottom: 24px;
+
+}
+
+.instructions ol {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+}
+
+.instructions li {
+  position: relative;
+  padding-left: 32px; /* Espacio para el bullet point */
+  margin-bottom: 12px;
+  color: var(--stone600)
+}
+
+.instructions li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: var(--brown800);
+  line-height: inherit;
+  font-size: 16px;
+}
+
+/* Línea inferior */
+.instructions::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #E5E5E5; /* Color gris claro para la línea */
+}
+
+.nutrition {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-bottom: 32px;
+  position: relative;
+}
+
+.nutrition h2 {
+  color: var(--brown800);
+  font-family: 'Young Serif';
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.nutrition p {
+  color: var(--stone600);
+  margin-bottom: 32px;
+}
+
+.nutrition table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.nutrition td {
+  padding: 12px 32px;
+  border: none;
+  color: var(--stone600);
+}
+
+.nutrition tr:not(:last-child) td {
+  border-bottom: 1px solid #E5E5E5;
+ }
+
+.nutrition td:first-child {
+  padding-left: 30px;
+}
+
+.nutrition td:last-child {
+  padding-right: 50px;
+  color: var(--brown800);
+  font-weight: bold;
+}
+
+.nutrition::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #E5E5E5;
+ }
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .card {
+      width: 95%; /* Más ajustado en dispositivos pequeños */
+      margin: 16px auto; /* Reduce márgenes en dispositivos pequeños */
+    }
+  
+    img {
+      margin: 20px; /* Reduce márgenes de las imágenes */
+      width: calc(100% - 40px); /* Ajusta el ancho */
+    }
+  }
